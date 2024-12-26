@@ -4,7 +4,7 @@
 <div class="main">
   <p>home page</p>
   <br>
-  <p>old website:</p><a href="https://ushort.moe/www-v1/page">https://ushort.moe/www-v1/page</a>
+  <p>old website:</p><a href="https://ushort.moe/page-v1/page">https://ushort.moe/page-v1/page</a>
 </div>
 
 <style>
