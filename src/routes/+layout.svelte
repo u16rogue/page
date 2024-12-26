@@ -1,21 +1,26 @@
 <script lang="ts">
   import "../app.css";
-  import { page } from "$app/state";
-  import type { PageMeta } from "$lib/types";
   import { base } from "$app/paths";
-  const meta = page.data?.meta as PageMeta;
+  import { page } from "$app/state";
+  import type { PageData } from "./$types";
+  import type { PageMetadata } from "$lib/types";
+  export let data: PageData;
+  const page_meta = page?.data?._meta as PageMetadata;
 </script>
 
 <svelte:head>
-  <title>{meta?.nav?.title || '<no title>'} | 🐀</title>
+  <title>{page_meta.page?.title || data._meta?.page?.title || '<no title>'} | 🐀</title>
 </svelte:head>
 
 <div class="main">
   <div class="top-nav">
     <div class="top-nav-left">
       <div class="navdrop">
-        <a class="navanchor" href="{meta?.nav?.display?.href || `${base}/`}">{meta?.nav?.display?.text || meta?.nav?.title || '<err>'}</a>
+        <a class="navanchor" href="{page_meta?.nav?.display?.href || data?._meta?.nav?.display?.href || `${base}/`}">{page_meta.nav?.display?.text || data?._meta?.nav?.display?.text || '<no name>'}</a>
         <div class="navdropper">
+          {#each data?._meta?.nav?.navs as nav}
+            <a href="{nav.href || '/error?reason=noroute'}">{nav.display || '<no display text>'}</a>
+          {/each}
         </div>
       </div>
     </div>
@@ -41,7 +46,7 @@
     display: none;
     flex-direction: column;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 8px;
     min-width: 100px;
   }

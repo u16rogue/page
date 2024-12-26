@@ -1,8 +1,30 @@
-import type { PageMeta } from "$lib/types";
+import type { PageMetadata } from "$lib/types";
 import type { PageServerLoad } from "./$types";
+import { base } from "$app/paths";
+
+/***metadata***
+{
+  "nav": {
+    "include": true,
+    "display": {
+      "text": "articles"
+    }
+  }
+}
+**************/
 
 export const load: PageServerLoad = async function (event) {
   return {
-    meta: {} satisfies PageMeta,
+    _meta: {
+      nav: {
+        display: {
+          text: 'articles',
+          href: `${base}/articles`,
+        },
+      },
+      page: {
+        title: 'articles',
+      },
+    } satisfies PageMetadata,
   };
 };

@@ -1,10 +1,11 @@
-export type PageMeta = {
+export type PageMetadata = {
   nav?: {
-    route?: string,
     display?: {
       text?: string,
       href?: string,
     },
+  },
+  page?: {
     title?: string,
   },
 };

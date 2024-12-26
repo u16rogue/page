@@ -1,2 +1,2 @@
-import type { PageMeta as _PageMeta } from "./pagemeta";
-export type PageMeta = _PageMeta;
+import type { PageMetadata as _PageMetadata } from "./pagemeta";
+export type PageMetadata = _PageMetadata;
