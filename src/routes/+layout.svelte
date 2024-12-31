@@ -2,14 +2,14 @@
   import "../app.css";
   import { base } from "$app/paths";
   import { page } from "$app/state";
-  import type { PageData } from "./$types";
+  import type { LayoutData } from "./$types";
   import type { PageMetadata } from "$lib/types";
-  export let data: PageData;
+  export let data: LayoutData;
   const page_meta = page?.data?._meta as PageMetadata;
 </script>
 
 <svelte:head>
-  <title>{page_meta.page?.title || data._meta?.page?.title || '<no title>'} | 🐀</title>
+  <title>{page?.data?._meta?.page?.title || data._meta?.page?.title || '<no title>'} | 🐀</title>
 </svelte:head>
 
 <div class="main">
@@ -19,7 +19,7 @@
         <a class="navanchor" href="{page_meta?.nav?.display?.href || data?._meta?.nav?.display?.href || `${base}/`}">{page_meta.nav?.display?.text || data?._meta?.nav?.display?.text || '<no name>'}</a>
         <div class="navdropper">
           {#each data?._meta?.nav?.navs as nav}
-            <a href="{nav.href || '/error?reason=noroute'}">{nav.display || '<no display text>'}</a>
+            <a href="{nav.href || '/error?reason=noroute'}">{nav.text || '<no display text>'}</a>
           {/each}
         </div>
       </div>
@@ -28,13 +28,23 @@
     </div>
     <div class="top-nav-right"></div>
   </div>
-  <slot/>
+  <div class="slot-content">
+    <slot/>
+  </div>
 </div>
 
 <style>
   .main {
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slot-content {
+    flex-grow: 1;
+    flex-basis: 0;
+    min-height: 0;
   }
 
   .navanchor {

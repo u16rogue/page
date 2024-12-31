@@ -10,15 +10,15 @@ export const load: LayoutServerLoad = async function (event) {
   const visible_nav_routes = [
     {
       href: `${base}/`,
-      display: 'home',
+      text: 'home',
     } as any,
   ];
 
-  for (const file of fs.readdirSync(routes_dir)) {
-    const route_metadata = load_metadata(file);
+  for (const route_file of fs.readdirSync(routes_dir)) {
+    const route_metadata = load_metadata(route_file);
 
     if (!route_metadata.ok) {
-      console.warn(`skipped ${file} due to: ${route_metadata.message}`);
+      console.warn(`skipped ${route_file} due to: ${route_metadata.message}`);
       continue;
     }
 
@@ -27,16 +27,18 @@ export const load: LayoutServerLoad = async function (event) {
            route_metadata?.data?.nav?.display?.href
         || `${base}/${/src\/routes\/(.*)*\/\+page\.server\.ts/g.exec(route_metadata.filepath)?.[1] || 'error?reason=invalidroute'}`
       ;
-      const display = route_metadata?.data?.nav?.display?.text || /\/page[\w\d]*\/(.*)*/g.exec(href)?.[1] || '<no display text>';
-      visible_nav_routes.push({ href, display });
+      const text = route_metadata?.data?.nav?.display?.text || /\/page[\w\d]*\/(.*)*/g.exec(href)?.[1] || '<no display text>';
+      visible_nav_routes.push({ href, text });
     }
   }
 
   return {
     _meta: {
       nav: {
-        display: undefined,
-        href: undefined,
+        display: {
+          href: null,
+          text: null,
+        },
         navs: visible_nav_routes.map((x: any) => {
           return {
             ...x,
@@ -44,7 +46,7 @@ export const load: LayoutServerLoad = async function (event) {
         }),
       },
       page: {
-        title: undefined,
+        title: null,
       },
     },
   };
