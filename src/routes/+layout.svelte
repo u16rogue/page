@@ -1,22 +1,20 @@
 <script lang="ts">
   import "../app.css";
   import { base } from "$app/paths";
-  import { page } from "$app/state";
+  import { page } from "$app/stores";
   import type { LayoutData } from "./$types";
-  import type { PageMetadata } from "$lib/types";
   export let data: LayoutData;
-  const page_meta = page?.data?._meta as PageMetadata;
 </script>
 
 <svelte:head>
-  <title>{page?.data?._meta?.page?.title || data._meta?.page?.title || '<no title>'} | 🐀</title>
+  <title>{$page?.data?._meta?.page?.title || data._meta?.page?.title || '<no title>'} | 🐀</title>
 </svelte:head>
 
 <div class="main">
   <div class="top-nav">
     <div class="top-nav-left">
       <div class="navdrop">
-        <a class="navanchor" href="{page_meta?.nav?.display?.href || data?._meta?.nav?.display?.href || `${base}/`}">{page_meta.nav?.display?.text || data?._meta?.nav?.display?.text || '<no name>'}</a>
+        <a class="navanchor" href="{$page?.data?._meta?.nav?.display?.href || data?._meta?.nav?.display?.href || `${base}/`}">{$page?.data?._meta?.nav?.display?.text || data?._meta?.nav?.display?.text || '<no name>'}</a>
         <div class="navdropper">
           {#each data?._meta?.nav?.navs as nav}
             <a href="{nav.href || '/error?reason=noroute'}">{nav.text || '<no display text>'}</a>

@@ -12,9 +12,9 @@
     <p><span class="item-list-highlighter">Languages:</span> ?</p>
 
     <h1>identifiers</h1>
-    <p><span class="item-list-highlighter">PGP Signing and Encryption:</span></p>
+    <p><span class="item-list-highlighter">GPG Keys:</span></p>
     <ul>
-      <li>PGP Signing and Encryption - u16rogue: <a href="https://keys.openpgp.org/search?q=F8CF8408099EF18C2667D850C6E401136B821496">OpenPGP</a></li>
+      <li>Signing and Encryption - u16rogue: <a href="https://keys.openpgp.org/search?q=F8CF8408099EF18C2667D850C6E401136B821496">OpenPGP</a></li>
     </ul>
 
     <h1>links & contact</h1>
