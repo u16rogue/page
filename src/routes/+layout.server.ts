@@ -18,7 +18,7 @@ export const load: LayoutServerLoad = async function (event) {
     const route_metadata = load_metadata(route_file);
 
     if (!route_metadata.ok) {
-      console.warn(`skipped ${route_file} due to: ${route_metadata.message}`);
+      //console.warn(`skipped ${route_file} due to: ${route_metadata.message}`);
       continue;
     }
 

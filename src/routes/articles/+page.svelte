@@ -4,7 +4,7 @@
 </script>
 
 <div class="main">
-  <p>articles page</p>
+  <p>articles pages</p>
 </div>
 
 <style>
