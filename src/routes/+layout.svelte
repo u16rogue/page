@@ -7,16 +7,16 @@
 </script>
 
 <svelte:head>
-  <title>{$page?.data?._meta?.page?.title || data._meta?.page?.title || '<no title>'} | 🐀</title>
+  <title>{$page?.data?._meta?.page?.title || '<no title>'} | 🐀</title>
 </svelte:head>
 
 <div class="main">
   <div class="top-nav">
     <div class="top-nav-left">
       <div class="navdrop">
-        <a class="navanchor" href="{$page?.data?._meta?.nav?.display?.href || data?._meta?.nav?.display?.href || `${base}/`}">{$page?.data?._meta?.nav?.display?.text || data?._meta?.nav?.display?.text || '<no name>'}</a>
+        <a class="navanchor" href="{$page?.data?._meta?.nav?.display?.href || `${base}/`}">{$page?.data?._meta?.nav?.display?.text || '<no name>'}</a>
         <div class="navdropper">
-          {#each data?._meta?.nav?.navs as nav}
+          {#each data?.nav?.navs as nav}
             <a href="{nav.href || '/error?reason=noroute'}">{nav.text || '<no display text>'}</a>
           {/each}
         </div>

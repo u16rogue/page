@@ -33,21 +33,12 @@ export const load: LayoutServerLoad = async function (event) {
   }
 
   return {
-    _meta: {
-      nav: {
-        display: {
-          href: null,
-          text: null,
-        },
-        navs: visible_nav_routes.map((x: any) => {
-          return {
-            ...x,
-          };
-        }),
-      },
-      page: {
-        title: null,
-      },
+    nav: {
+      navs: visible_nav_routes.map((x: any) => {
+        return {
+          ...x,
+        };
+      }),
     },
   };
 };
