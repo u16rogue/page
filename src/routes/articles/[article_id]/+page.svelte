@@ -8,9 +8,12 @@
       ?.querySelector('.content-markdown')
       ?.querySelectorAll('code')
       ?.forEach(function (e) {
+        if (!e.innerText.startsWith('#: ') && !e.innerText.startsWith('$: ')) {
+          return;
+        }
         e.style.cursor = 'pointer';
         e.onclick = function () {
-          navigator.clipboard.writeText(e.innerText);
+          navigator.clipboard.writeText(e.innerText.substring(3));
         };
       })
     ;

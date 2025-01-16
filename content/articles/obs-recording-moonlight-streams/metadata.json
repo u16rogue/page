@@ -1,5 +1,6 @@
 {
   "title": "Recording Moonlight Stream with OBS using vkcapture",
+  "description": "A short guide about recording a Moonlight Stream with OBS using vkcapture all under flatpak",
   "stamps": {
     "created": "Tue Oct 15 2024 01:58:08 GMT+0800 (Taipei Standard Time)",
     "added":   "Tue Oct 15 2024 01:58:08 GMT+0800 (Taipei Standard Time)"
