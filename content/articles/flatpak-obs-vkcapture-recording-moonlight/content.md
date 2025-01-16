@@ -1,4 +1,4 @@
-# OBS Recording a Moonlight Stream
+# Recording a Moonlight Stream with OBS using vkcapture under flatpak
 
 ## Problem
 Record (only) my gameplay (directly) from Moonlight

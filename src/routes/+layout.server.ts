@@ -1,7 +1,7 @@
 import { base } from "$app/paths";
 import type { LayoutServerLoad } from "./$types";
 import fs from "node:fs";
-import { load_metadata } from "$lib/server/core/routemeta";
+import { load_metadata } from "$lib/server/core/routing";
 
 export const prerender = true;
 

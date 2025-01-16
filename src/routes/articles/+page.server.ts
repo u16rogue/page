@@ -3,8 +3,9 @@ import type { PageServerLoad } from "./$types";
 import { base } from "$app/paths";
 import fs from "fs";
 import path from "path";
-import type { ArticleMetadata } from "$lib/types/articlemeta";
+import type { ArticleMetadata } from "$lib/server/core/articles";
 import { ARTICLES_DIR } from "./config";
+import { load_metadata } from "$lib/server/core/articles";
 
 /***metadata***
 {
@@ -16,30 +17,6 @@ import { ARTICLES_DIR } from "./config";
   }
 }
 **************/
-
-async function load_metadata(path: string): Promise<{ ok: true, value: ArticleMetadata } | { ok: false, reason?: string }> {
-  const fail = function (reason: string | undefined): { ok: false, reason?: string} {
-    return { ok: false, reason };
-  };
-
-  if (!fs.existsSync(path)) {
-    return fail('not implemented');
-  }
-
-  let metadata = null;
-  try {
-    metadata = JSON.parse(fs.readFileSync(path).toString());
-    if (!metadata) throw '';
-  } catch {
-    return fail('exception');
-  }
-
-  for (const stamp in metadata.stamps) {
-    metadata.stamps[stamp] = new Date(metadata.stamps[stamp]);
-  }
-
-  return { ok: true, value: metadata };
-}
 
 type ProcessedArticleEntry = {
   value: ArticleMetadata,
