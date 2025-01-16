@@ -4,6 +4,7 @@ import { base } from "$app/paths";
 import fs from "fs";
 import path from "path";
 import type { ArticleMetadata } from "$lib/types/articlemeta";
+import { ARTICLES_DIR } from "./config";
 
 /***metadata***
 {
@@ -15,8 +16,6 @@ import type { ArticleMetadata } from "$lib/types/articlemeta";
   }
 }
 **************/
-
-const ARTICLES_DIR = path.join('content', 'articles');
 
 async function load_metadata(path: string): Promise<{ ok: true, value: ArticleMetadata } | { ok: false, reason?: string }> {
   const fail = function (reason: string | undefined): { ok: false, reason?: string} {
