@@ -4,36 +4,7 @@ import type { PageServerLoad } from "./$types";
 import { ARTICLES_DIR } from "../config";
 import type { PageMetadata } from "$lib/types";
 import { base } from "$app/paths";
-
-import { compile as mdsvex_compile, escapeSvelte as mdsvex_escapesvelte } from "mdsvex";
-import { createHighlighter } from "shiki";
-import { load_metadata } from "$lib/server/core/articles";
-
-const highlight_config = {
-  themes: ['catppuccin-mocha'],
-  langs: [ 'typescript', 'cpp', 'c', 'json' ],
-};
-
-const _highlighter = await createHighlighter(highlight_config);
-
-async function load_content(article_dir: string) {
-  if (fs.existsSync(path.join(article_dir, 'content.md'))) {
-    return {
-      type: 'markdown',
-      value: await mdsvex_compile(fs.readFileSync(path.join(article_dir, 'content.md')).toString(), {
-        highlight: {
-          highlighter: async (code: string, lang: string | null | undefined) => {
-            return mdsvex_escapesvelte(_highlighter.codeToHtml(code, { lang: lang!, theme: highlight_config.themes[0] }));
-          },
-        }
-      }),
-    };
-  } else {
-    return {
-      type: 'none',
-    };
-  }
-};
+import { load_content, load_metadata } from "$lib/server/core/articles";
 
 export const load: PageServerLoad = async function (event) {
   if (!event.params.article_id) {
@@ -52,10 +23,9 @@ export const load: PageServerLoad = async function (event) {
   }
 
   const content = await load_content(article_dir);
-  if (content.type === 'none') {
+  if (!content) {
     throw 'unloadable content';
   }
-
 
   return {
     content,
