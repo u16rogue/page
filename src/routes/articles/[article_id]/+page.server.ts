@@ -28,7 +28,7 @@ export const load: PageServerLoad = async function (event) {
   }
 
   return {
-    content,
+    content: content!,
     _meta: {
       nav: {
         display: {
