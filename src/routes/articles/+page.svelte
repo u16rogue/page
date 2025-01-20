@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { base } from "$app/paths";
+  import { base } from "$app/paths";
   import type { PageData } from "./$types";
   export let data: PageData;
 </script>
@@ -17,7 +17,7 @@
       {/if}
 
       <div class="article-entry-info">
-        <a class="article-title" href="{base}/articles/{article.path}">{article.value.title || article.path}</a>
+        <a class="article-title" href="{article.href}">{article.value.title || '<no title>'}</a>
         <p>{article.value.description || 'No description.'}</p>
       </div>
     </div>

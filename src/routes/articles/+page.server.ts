@@ -18,9 +18,9 @@ import { load_metadata } from "$lib/server/core/articles";
 }
 **************/
 
-type ProcessedArticleEntry = {
+type ProcessedEntry = {
   value: ArticleMetadata,
-  path: string,
+  href: string,
 };
 
 export const load: PageServerLoad = async function (event) {
@@ -28,8 +28,8 @@ export const load: PageServerLoad = async function (event) {
     throw "Articles directory not found.";
   }
 
-  const sorted_articles:   Array<ProcessedArticleEntry> = [];
-  const unsorted_articles: Array<ProcessedArticleEntry> = [];
+  const sorted_entries:   Array<ProcessedEntry> = [];
+  const unsorted_entries: Array<ProcessedEntry> = [];
 
   for (const dir of fs.readdirSync(ARTICLES_DIR)) {
     const dir1 = path.join(ARTICLES_DIR, dir);
@@ -38,15 +38,15 @@ export const load: PageServerLoad = async function (event) {
       continue;
     }
 
-    const processed_entry = { value: metadata.value, path: dir };
+    const processed_entry = { value: metadata.value, href: `${base}/articles/${dir}` };
     if (metadata.value.stamps?.edited || metadata.value.stamps?.added || metadata.value.stamps?.created) {
-      sorted_articles.push(processed_entry);
+      sorted_entries.push(processed_entry);
     } else {
-      unsorted_articles.push(processed_entry);
+      unsorted_entries.push(processed_entry);
     }
   }
 
-  sorted_articles.sort(function (a, b) {
+  sorted_entries.sort(function (a, b) {
     const aa = a.value.stamps?.edited || a.value.stamps?.added || a.value.stamps?.created;
     const bb = b.value.stamps?.edited || b.value.stamps?.added || b.value.stamps?.created;
 
@@ -65,10 +65,10 @@ export const load: PageServerLoad = async function (event) {
     throw 'unsortable date. filter failed';
   });
 
-  sorted_articles.push(...unsorted_articles);
+  sorted_entries.push(...unsorted_entries);
 
   return {
-    articles: sorted_articles,
+    articles: sorted_entries,
     _meta: {
       nav: {
         display: {
