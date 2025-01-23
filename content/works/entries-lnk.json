@@ -1,5 +1,6 @@
 [
   {
+    "id": "metapp",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "metapp",
     "description": "A general C++ utility library for metaprogramming, templating, and other questionable things.",
@@ -13,6 +14,7 @@
     ]
   },
   {
+    "id": "kitakit",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "kitakit",
     "description": "Crossplatform GUI library and framework powered by ImGui.",
@@ -25,6 +27,7 @@
     ]
   },
   {
+    "id": "kunta",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "kunta",
     "description": "Finance Tracking App/Software.",
@@ -36,6 +39,7 @@
     ]
   },
   {
+    "id": "khuneo",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "khuneo",
     "description": "An embedded programming/scripting language.",
@@ -50,8 +54,9 @@
     ]
   },
   {
+    "id": "page",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
-    "title": "www-page",
+    "title": "page",
     "description": "This website.",
     "repourl": "https://github.com/u16rogue/page",
     "tags": [
@@ -63,6 +68,7 @@
     ]
   },
   {
+    "id": "x64dbg-sigmaker",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "x64dbg-sigmaker",
     "description": "A plugin for x64dbg for generating byte patterns/signatures.",
@@ -74,6 +80,7 @@
     ]
   },
   {
+    "id": "kulam",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "kulam",
     "description": "Bewitch binaries for modding! A modding framework.",
@@ -85,6 +92,7 @@
     ]
   },
   {
+    "id": "winlib",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "winlib",
     "description": "C++ Library for interacting with x64 Windows.",
@@ -96,6 +104,7 @@
     ]
   },
   {
+    "id": "memlib",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "memlib",
     "description": "C++ Library for interacting with raw memory and addressing in x64",
@@ -107,6 +116,7 @@
     ]
   },
   {
+    "id": "baelz",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "baelz",
     "description": "Build and execute lazily. A custom build system.",
@@ -118,6 +128,7 @@
     ]
   },
   {
+    "id": "osu-key-dumper",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "osu-key-dumper",
     "description": "Dumps osu!'s decryption key from memory.",
@@ -131,6 +142,7 @@
     ]
   },
   {
+    "id": "hndcafe-patcher",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "handyCafe Patcher",
     "description": "Runtime patcher for the cafe client handyCafe",
@@ -145,6 +157,7 @@
     ]
   },
   {
+    "id": "bad-echo-driver-poc",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "bad-echo-driver PoC",
     "description": "Protect, Unprotect, Filter handles, Create handle, and Read memory by abusing a signed Kernel driver.",
@@ -156,6 +169,7 @@
     ]
   },
   {
+    "id": "genshin-scripting-framework",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "Genshin Impact Scripting Framework",
     "description": "A modding utility for Genshin Impact",
@@ -169,6 +183,7 @@
     ]
   },
   {
+    "id": "dota2-internal",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "Dota 2 Internal",
     "description": "A modding utility for Dota 2",
@@ -182,6 +197,7 @@
     ]
   },
   {
+    "id": "cs2-internal",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "CS2 Internal",
     "description": "A modding utility for the Counter Strike 2",
@@ -195,6 +211,7 @@
     ]
   },
   {
+    "id": "cs2-032023-internal",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "CS2 M03 Internal",
     "description": "A modding utility for the leaked March 2023 Counter Strike 2 build.",
@@ -208,6 +225,7 @@
     ]
   },
   {
+    "id": "obs-win-cap-patcher",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "OBS CS Game Capture Patcher",
     "description": "Patches OBS to enable Game Capture for Counter Strike",
@@ -221,6 +239,7 @@
     ]
   },
   {
+    "id": "rut-cmake",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "rut.cmake",
     "description": "A CMake utility library",

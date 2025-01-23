@@ -1,9 +1,9 @@
 import { base } from "$app/paths";
-import type { PageMetadata } from "$lib/types";
+import type { PageMetadata, WorkExternalEntry } from "$lib/types";
 import type { PageServerLoad } from "./$types";
 import fs from "fs";
 import path from "path";
-import { WORKS_DIR, WORKS_LINKONLY_PATH } from "./config";
+import { WORKS_DIR, WORKS_EXTERNAL_PATH } from "./config";
 
 /***metadata***
 {
@@ -41,20 +41,15 @@ export const load: PageServerLoad = async function (event) {
     }
   }
 
-  if (fs.existsSync(WORKS_LINKONLY_PATH)) {
-    const lnkonly: Array<{
-      icon?: string,
-      title?: string,
-      description?: string,
-      repourl?: string,
-      tags?: Array<string>,
-    }> = JSON.parse(fs.readFileSync(WORKS_LINKONLY_PATH).toString());
+  if (fs.existsSync(WORKS_EXTERNAL_PATH)) {
+    const lnkonly: Array<WorkExternalEntry> = JSON.parse(fs.readFileSync(WORKS_EXTERNAL_PATH).toString());
     lnkonly.forEach(function (x) {
+      if (!x.id) throw 'Required ID field is missing.';
       unsorted_entries.push({
         thumbnail: x.icon,
         title: x.title,
         description: x.description,
-        href: x.repourl,
+        href: `${base}/works/${x.id}`,
         tags: x.tags,
       });
     });

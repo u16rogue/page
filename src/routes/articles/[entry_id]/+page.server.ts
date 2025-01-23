@@ -7,11 +7,11 @@ import { base } from "$app/paths";
 import { load_content, load_metadata } from "$lib/server/core/articles";
 
 export const load: PageServerLoad = async function (event) {
-  if (!event.params.article_id) {
+  if (!event.params.entry_id) {
     throw 'invalid article id parameter';
   }
 
-  const article_dir = path.join(ARTICLES_DIR, event.params.article_id);
+  const article_dir = path.join(ARTICLES_DIR, event.params.entry_id);
   const metadata_path = path.join(article_dir, 'metadata.json');
   if (!fs.existsSync(article_dir)) {
     throw 'invalid directory path from article id';

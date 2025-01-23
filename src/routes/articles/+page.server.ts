@@ -1,4 +1,3 @@
-import type { PageMetadata } from "$lib/types";
 import type { PageServerLoad } from "./$types";
 import { base } from "$app/paths";
 import fs from "fs";
@@ -6,6 +5,7 @@ import path from "path";
 import type { ArticleMetadata } from "$lib/server/core/articles";
 import { ARTICLES_DIR } from "./config";
 import { load_metadata } from "$lib/server/core/articles";
+import type { PageMetadata } from "$lib/types";
 
 /***metadata***
 {
