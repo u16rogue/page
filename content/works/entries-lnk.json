@@ -1,5 +1,19 @@
 [
   {
+    "id": "ks-idsys",
+    "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
+    "title": "ks-idsys",
+    "description": "A centralized identification system platform",
+    "repourl": "https://github.com/u16rogue/ks-idsys",
+    "tags": [
+      "svelte",
+      "typescript",
+      "bun",
+      "postgresql",
+      "drizzle"
+    ]
+  },
+  {
     "id": "metapp",
     "icon": "https://avatars.githubusercontent.com/u/61908580?v=4",
     "title": "metapp",
