@@ -20,7 +20,7 @@
         <h1>links & contact</h1>
         <p><span class="item-list-highlighter">SimpleX:</span> <a href="https://simplex.chat/contact#/?v=2-7&smp=smp%3A%2F%2Fhejn2gVIqNU6xjtGM3OwQeuk8ZEbDXVJXAlnSBJBWUA%3D%40smp16.simplex.im%2F-9WRZUQ3ghE3M1rXUQUO1fXICdXZKtpb%23%2F%3Fv%3D1-3%26dh%3DMCowBQYDK2VuAyEAnLym1RTH5LeT-FxbWN0eGXaccvKrDQgLHWB_4MUDm3E%253D%26srv%3Dp3ktngodzi6qrf7w64mmde3syuzrv57y55hxabqcq3l5p6oi7yzze6qd.onion">Invite</a>, <a href="https://github.com/u16rogue/u16rogue/blob/master/simplex.png?raw=true">QR</a></p>
         <p><span class="item-list-highlighter">Email:</span> <a href="mailto:contact@ushort.moe">contact@ushort.moe</a> (<a href="https://keys.openpgp.org/search?q=5033153C4D1236EF714B5330568CBAF357C12B3D">Keys</a>)</p>
-        <p><span class="item-list-highlighter">Monero:</span> <a href="monero:89yEiQexDpCFm4abkhN7UWZft6dubKx9PVQR4BdwGvqFQHw4JG1ctcyULVH6eCr3n3b8KSND3vfqC3vhPsAvFyBq97nBCEk">Address</a>, <a href="https://github.com/u16rogue/u16rogue/blob/master/monero.png?raw=true">QR</a></p>
+        <p><span class="item-list-highlighter">Monero:</span> <a href="monero:8AV49WyzKtrPKqyCaGkhXw3uAUN8wcRViUh55hJaXQoHXRRjdS6ZhfpNWpAzccuFWL1eNsRZqkE2JTzEwcS2xGHY7J2bgeP">Address</a>, <a href="https://github.com/u16rogue/u16rogue/blob/master/xmr.png?raw=true">QR</a></p>
 
         <h1>archive</h1>
         <p><span class="item-list-highlighter">old website:</span> <a href="https://ushort.moe/page-v1">https://ushort.moe/page-v1</a></p>
